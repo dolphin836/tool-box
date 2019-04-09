@@ -2,13 +2,28 @@ document.addEventListener('DOMContentLoaded', () => {
     var input     = document.getElementById("input"),
         transform = document.getElementById("transform"),
         output    = document.getElementById("output"),
-        clean     = document.getElementById("clean");
+        clean     = document.getElementById("clean"),
+        datetime  = document.getElementById("datetime"),
+        timestamp = document.getElementById("timestamp");
     // 清除按钮是否显示标识
     var is_show_clean = false;
     // 是否已复制结果标识
     var is_copy       = false;
     // 定时器
     var outputTimer   = 0;
+    // 时钟
+    setInterval(function () {
+        let now     = new Date();
+        let month   = now.getMonth() + 1;
+
+        let datetimeHtml  = now.getFullYear() + '-' + zfill(month) + '-' + zfill(now.getDate()) + ' ' + zfill(now.getHours()) + ':' + zfill(now.getMinutes()) + ':' + zfill(now.getSeconds());
+ 
+        let timestampHtml = stringToInt(datetimeHtml);
+
+        datetime.innerHTML  = datetimeHtml;
+        timestamp.innerHTML = timestampHtml;
+    }, 1000);
+
     // 获取焦点
     input.focus();
     // 键盘回车事件
@@ -51,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let textLength = inputText.length;
         // 字符串转整型
         if (textLength == 19) {
-            let timestamp = stringToInt(inputText) / 1000;
+            let timestamp = stringToInt(inputText);
 
             showHtml(timestamp)
 
@@ -105,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     // 字符串转整型
     function stringToInt(argc) {
-        return Date.parse(argc);
+        return Date.parse(argc) / 1000;
     }
     // 整型转字符串
     function intToString(argc) {
