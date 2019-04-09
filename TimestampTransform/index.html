@@ -7,6 +7,15 @@
     <title>时间戳格式转化 - Timestamp Transform</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <style>
+        .control.has-icons-right .icon {
+            pointer-events: auto;
+            cursor: pointer;
+        }
+        .button.is-text {
+            text-decoration: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -16,53 +25,34 @@
                 <div class="column is-half is-offset-one-quarter">
                     <div class="control has-icons-right">
                         <textarea class="textarea is-focused has-fixed-size" id="input"
-                            placeholder="2019-04-08 12:00:00 OR 1554716920" maxlength="19"></textarea>
-                        <span class="icon is-right has-text-danger">
+                            placeholder="格式：2019-04-08 12:00:00" maxlength="19"></textarea>
+                        <span class="icon is-right has-text-danger is-invisible" id="clean">
                             <i class="fas fa-times"></i>
                         </span>
                     </div>
-                    <p class="help is-danger">程序将根据你的输入进行自动转换</p>
+                    <p class="help is-info">快捷键 <code>Enter</code></p>
                 </div>
             </div>
             <div class="columns">
                 <div class="column is-half is-offset-one-quarter">
-                    <button class="button is-info is-medium is-fullwidth is-rounded" id="transform">转 换</button>
+                    <button class="button is-info is-medium is-fullwidth is-rounded" id="transform">
+                        <span class="icon is-small">
+                            <i class="fas fa-paper-plane"></i>
+                        </span>
+                        <span>转 换</span>
+                    </button>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column is-half is-offset-one-quarter">
+                    <h4 class="has-text-centered">
+                        <a href="javascript:void(0)" class="button is-text" id="output"></a>
+                    </h4>
                 </div>
             </div>
         </div>
     </section>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            var input     = document.getElementById("input"),
-                transform = document.getElementById("transform");
-            // 键盘回车事件
-            input.addEventListener("keyup", function (event) {
-                if (event.keyCode === 13) {
-                    event.preventDefault();
-                    transform.click();
-                }
-            });
-            // 转换按钮点击事件
-            transform.addEventListener('click', () => {
-                var inputText  = input.value;
-                var textLength = inputText.length;
-                // 字符串转整型
-                if (textLength == 19) {
-                    a();
-
-                    return;
-                }
-                // 整型转字符串
-                if (textLength == 10) {
-                    b();
-
-                    return;
-                }
-
-                alert('不能识别的输入.');
-            });
-        }); 
-    </script>
+    <script src="TimestampTransform.js"></script>
 </body>
 
 </html>
