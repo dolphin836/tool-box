@@ -5,18 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>时间戳转换 - Timestamp Transform</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <style>
-        .control.has-icons-right .icon {
-            pointer-events: auto;
-            cursor: pointer;
-        }
-        .button.is-text {
-            text-decoration: none;
-        }
-    </style>
-</head>
+<link href="TimestampTransform.fecddea9.css" rel="stylesheet"></head>
 
 <body>
     <section class="section">
@@ -24,17 +13,13 @@
             <div class="columns">
                 <div class="column is-one-quarter is-offset-one-quarter">
                     <h5 class="has-text-grey">
-                        <span class="icon" style="display: inline-table;">
-                            <i class="far fa-calendar"></i>
-                        </span>
+                        <span class="oi icon" style="display: inline-table;" data-glyph="clock" aria-hidden="true"></span>
                         <span id="datetime">1970-01-01 00:00:00</span>
                     </h5>
                 </div>
                 <div class="column is-one-quarter">
                     <h5 class="has-text-grey">
-                        <span class="icon" style="display: inline-table;">
-                            <i class="far fa-clock"></i>
-                        </span>
+                        <span class="oi icon" style="display: inline-table;" data-glyph="clock" aria-hidden="true"></span>
                         <span id="timestamp">0</span>
                     </h5>
                 </div>
@@ -44,9 +29,7 @@
                     <div class="control has-icons-right">
                         <textarea class="textarea is-focused has-fixed-size" id="input"
                             placeholder="格式：2019-04-08 12:00:00" maxlength="19"></textarea>
-                        <span class="icon is-right has-text-danger is-invisible" id="clean">
-                            <i class="fas fa-times"></i>
-                        </span>
+                        <span class="oi icon is-right has-text-danger is-invisible" data-glyph="x" aria-hidden="true" id="clean"></span>
                     </div>
                     <p class="help is-info">快捷键 <code>Enter</code></p>
                 </div>
@@ -54,9 +37,7 @@
             <div class="columns">
                 <div class="column is-half is-offset-one-quarter">
                     <button class="button is-info is-medium is-fullwidth is-rounded" id="transform">
-                        <span class="icon is-small">
-                            <i class="fas fa-paper-plane"></i>
-                        </span>
+                        <span class="oi icon" data-glyph="transfer" aria-hidden="true"></span>
                         <span>转 换</span>
                     </button>
                 </div>
@@ -70,7 +51,6 @@
             </div>
         </div>
     </section>
-    <script src="TimestampTransform.js"></script>
-</body>
+<script type="text/javascript" src="TimestampTransform.fecddea9.js"></script></body>
 
 </html>
