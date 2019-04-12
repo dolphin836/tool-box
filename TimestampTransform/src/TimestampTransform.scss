@@ -1,0 +1,10 @@
+@charset "utf-8";
+@import "~bulma/bulma";
+ 
+.button.is-text {
+    text-decoration: none
+}
+
+.oi[data-glyph]:before {
+    top: .1rem
+}

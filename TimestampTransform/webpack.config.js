@@ -1,7 +1,8 @@
-const path = require('path');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const path                    = require('path');
+const ExtractTextPlugin       = require("extract-text-webpack-plugin");
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin       = require('html-webpack-plugin');
+const CleanWebpackPlugin      = require('clean-webpack-plugin');
 
 module.exports = {
     entry: './src/TimestampTransform.js',
@@ -9,6 +10,9 @@ module.exports = {
         filename: 'TimestampTransform.[chunkhash].js',
         path: path.resolve(__dirname, 'dist'),
         hashDigestLength: 8
+    },
+    devServer: {
+        contentBase: './dist'
     },
     module: {
         rules: [
@@ -37,6 +41,7 @@ module.exports = {
         ]
     },
     plugins: [
+        new CleanWebpackPlugin(),
         new ExtractTextPlugin('TimestampTransform.[chunkhash].css'),
         new OptimizeCssAssetsPlugin({
             assetNameRegExp: /\.css$/,
