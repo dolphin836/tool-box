@@ -5,6 +5,11 @@
     text-decoration: none
 }
 
+.button.is-text:hover {
+    background-color: hsl(217, 71%, 53%);
+    color: white;
+}
+
 .oi[data-glyph]:before {
     top: .1rem
 }

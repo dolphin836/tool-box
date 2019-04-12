@@ -3,18 +3,19 @@ const ExtractTextPlugin       = require("extract-text-webpack-plugin");
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const HtmlWebpackPlugin       = require('html-webpack-plugin');
 const CleanWebpackPlugin      = require('clean-webpack-plugin');
+const WebpackBar              = require('webpackbar');
 
 module.exports = {
-    entry: './src/TimestampTransform.js',
+    entry: './src/GeneratorRandonPassword.js',
     output: {
-        filename: 'TimestampTransform.[chunkhash].js',
+        filename: 'GeneratorRandonPassword.[chunkhash].js',
         path: path.resolve(__dirname, 'dist'),
         hashDigestLength: 8
     },
-    mode: 'production',
     devServer: {
         contentBase: './dist'
     },
+    mode: 'production',
     module: {
         rules: [
             {
@@ -43,7 +44,7 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(),
-        new ExtractTextPlugin('TimestampTransform.[chunkhash].css'),
+        new ExtractTextPlugin('GeneratorRandonPassword.[chunkhash].css'),
         new OptimizeCssAssetsPlugin({
             assetNameRegExp: /\.css$/,
             cssProcessor: require('cssnano'),
@@ -55,6 +56,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: 'src/index.html',
             filename: '../index.html'
-        })
+        }),
+        new WebpackBar()
     ]
 };
