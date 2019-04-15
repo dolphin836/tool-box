@@ -14,25 +14,9 @@
                 <div class="column is-half">
                     <div class="tags has-addons">
                         <span class="tag">密码长度</span>
-                        <span class="tag is-primary">8</span>
+                        <span class="tag is-primary" id="passwordLengthNumber">16</span>
                     </div>
-                    <input class="slider is-fullwidth is-info is-circle" id="passwordLength" step="1" min="6" max="32" value="8" type="range">
-                </div>
-            </div>
-            <div class="columns is-centered">
-                <div class="column is-half">
-                    <div class="field is-grouped is-grouped-centered">
-                        <div class="control">
-                            <button class="button is-success is-normal is-rounded" id="copy">
-                                复 制
-                            </button>
-                        </div>
-                        <div class="control">
-                            <button class="button is-info is-normal is-rounded" id="reload">
-                                刷 新
-                            </button>
-                        </div>
-                    </div>
+                    <input type="range" class="slider is-fullwidth is-info is-circle" id="passwordLength" step="1" min="6" max="32" value="16">
                 </div>
             </div>
             <div class="columns is-centered">
@@ -47,26 +31,9 @@
                                     <div class="field">
                                         <div class="control">
                                             <input class="input" type="number" value="1" max="10" min="1" step="1"
-                                                placeholder="Password Length">
+                                                placeholder="Password Length" disabled>
                                         </div>
                                     </div>
-                                    <p class="help">支持范围 1 ~ 10</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="field is-horizontal">
-                            <div class="field-label is-normal">
-                                <label class="label">长 度</label>
-                            </div>
-                            <div class="field-body">
-                                <div class="field is-narrow">
-                                    <div class="field">
-                                        <div class="control">
-                                            <input class="input" type="number" value="8" max="32" min="6" step="1"
-                                                placeholder="Password Length">
-                                        </div>
-                                    </div>
-                                    <p class="help">支持范围 6 ~ 32</p>
                                 </div>
                             </div>
                         </div>
@@ -77,37 +44,23 @@
                             </div>
                             <div class="field-body" style="display: block;margin-top: 2px;">
                                 <div class="field">
-                                    <input class="is-checkradio" id="exampleCheckboxDefault" type="checkbox" name="char" checked="checked">
-                                    <label for="exampleCheckboxDefault">大写字母</label>
+                                    <input class="is-checkradio" id="Cap" name="Cap" type="checkbox" checked>
+                                    <label for="Cap">大写字母</label>
                                 </div>
                                 <div class="field">
-                                    <input class="is-checkradio is-danger" id="exampleCheckboxDefault1" name="char1" type="checkbox" checked="checked">
-                                    <label for="exampleCheckboxDefault1">小写字母</label>
+                                    <input class="is-checkradio is-danger" id="Low" name="Low" type="checkbox" checked>
+                                    <label for="Low">小写字母</label>
                                 </div>
                                 <div class="field">
-                                    <input class="is-checkradio is-info" id="exampleCheckboxDefault2" name="char2" type="checkbox" checked="checked">
-                                    <label for="exampleCheckboxDefault2">数字</label>
+                                    <input class="is-checkradio is-info" id="Num" name="Num" type="checkbox" checked>
+                                    <label for="Num">数字</label>
                                 </div>
                                 <div class="field">
-                                    <input class="is-checkradio is-warning" id="exampleCheckboxDefault3" name="char3" type="checkbox" checked="checked">
-                                    <label for="exampleCheckboxDefault3">符号</label>
+                                    <input class="is-checkradio is-warning" id="Oth" name="Oth" type="checkbox">
+                                    <label for="Oth">符号</label>
                                 </div>
                             </div>
                         </div>
-
-
-                        <div class="field is-horizontal">
-                            <div class="field-label">
-                                <label class="label">易于阅读</label>
-                            </div>
-                            <div class="field-body" style="display: block;margin-top: 2px;">
-                                <div class="field">
-                                    <input id="switchRoundedSuccess" type="checkbox" name="switchRoundedSuccess" class="switch is-rounded is-success" checked="checked">
-                                    <label for="switchRoundedSuccess"></label>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
@@ -115,8 +68,25 @@
             <div class="columns is-centered">
                 <div class="column is-half">
                     <h4 class="has-text-centered">
-                        <a href="javascript:void(0)" class="button is-text"></a>
+                        <a href="javascript:void(0)" class="button is-text" id="password"></a>
                     </h4>
+                </div>
+            </div>
+
+            <div class="columns is-centered">
+                <div class="column is-half">
+                    <div class="field is-grouped is-grouped-centered">
+                        <div class="control">
+                            <button class="button is-success is-normal is-rounded" id="copy">
+                                复 制
+                            </button>
+                        </div>
+                        <div class="control">
+                            <button class="button is-info is-normal is-rounded" id="refresh">
+                                刷 新
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
