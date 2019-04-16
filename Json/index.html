@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JSON</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jsoneditor/5.32.4/jsoneditor.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+        <section class="section">
+            <div class="container">
+                <div class="columns is-centered">
+                    <div class="column is-half">
+                        <div class="content" id="content" style="height: 600px;"></div>
+                    </div>
+                </div>
+                <div class="columns is-centered">
+                    <div class="column is-half">
+                        <div class="field is-grouped is-grouped-centered">
+                            <div class="control">
+                                <button class="button is-success is-normal is-rounded" id="transform">
+                                    美 化
+                                </button>
+                            </div>
+                            <div class="control">
+                                <button class="button is-info is-normal is-rounded" id="mini">
+                                    压 缩
+                                </button>
+                            </div>
+                            <div class="control">
+                                <button class="button is-primary is-normal is-rounded" id="save">
+                                    复 制
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="columns is-centered">
+                    <div class="column is-half">
+                        <article class="message is-danger is-invisible" id="note-box">
+                            <div class="message-body" id="note"></div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsoneditor/5.32.4/jsoneditor.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+    <script>
+        var content   = document.getElementById("content"),
+            transform = document.getElementById("transform"),
+            mini      = document.getElementById("mini"),
+            noteBox   = document.getElementById("note-box"),
+            note      = document.getElementById("note"),
+            save      = document.getElementById("save");
+
+        let options = {
+            mainMenuBar: false
+        }
+
+        var Json = new JSONEditor(content, options);
+
+        Json.setMode('code');
+        Json.setText('');
+        Json.focus();
+
+        transform.addEventListener('click', () => {
+            try {
+                let text = Json.getText();
+                Json.set(JSON.parse(text));
+                noteBox.classList = 'message is-danger is-invisible';
+            } catch (error) {
+                noteBox.classList = 'message is-danger';
+                note.innerHTML    = error;
+            } 
+        });
+
+        mini.addEventListener('click', () => {
+            try {
+                let json = Json.get();
+                let text = JSON.stringify(json);
+                Json.setText(text);
+                noteBox.classList = 'message is-danger is-invisible';
+            } catch (error) {
+                noteBox.classList = 'message is-danger';
+                note.innerHTML    = error;
+            }
+        });
+
+        new ClipboardJS(save, {
+            text: function(trigger) {
+                return Json.getText();
+            }
+        });
+    </script>
+</body>
+
+</html>
