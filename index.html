@@ -6,41 +6,152 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>工具箱 - ToolBox</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-pageloader@2.1.0/dist/css/bulma-pageloader.min.css">
 </head>
 
 <body>
+    <div class="pageloader"><span class="title">Loading</span></div>
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-half is-offset-one-quarter">
-                    <h4 class="has-text-centered">
-                        <a href="/TimestampTransform/index.html" class="">时间戳转换 - Timestamp Transform</a>
-                    </h4>
-                </div>
-            </div>
-            <div class="columns">
-                <div class="column is-half is-offset-one-quarter">
-                    <h4 class="has-text-centered">
-                        <a href="/GeneratorRandonPassword/index.html" class="">生成随机密码 - Generator Randon Password</a>
-                    </h4>
-                </div>
-            </div>
-            <div class="columns">
-                <div class="column is-half is-offset-one-quarter">
-                    <h4 class="has-text-centered">
-                        <a href="/Json/index.html" class="">Json</a>
-                    </h4>
-                </div>
-            </div>
-            <div class="columns">
-                <div class="column is-half is-offset-one-quarter">
-                    <h4 class="has-text-centered">
-                        <a href="/SQL/index.html" class="">SQL</a>
-                    </h4>
+                <div class="column" id="main"></div>
+                <div class="column is-1 is-hidden-touch" style="background-color: #fafafa;">
+                    <aside class="menu">
+                        <p class="menu-label">快捷导航</p>
+                        <ul class="menu-list" id="menu"></ul>
+                    </aside>
                 </div>
             </div>
         </div>
     </section>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            var menu = document.getElementById("menu"),
+                main = document.getElementById("main");
+
+            fetch('site.json')
+                .then(function (response) {
+                    if (response.ok) {
+                        let json = response.json();
+
+                        json.then(function(data) {
+                            data.map(function (group) {
+                                addMenu(group.name, group.mark);
+                                addGroup(group);
+                            })
+                        });
+                    }
+                })
+                .catch(function (error) {
+                    console.log(JSON.stringify(error));
+                });
+               
+            // 添加快捷导航
+            function addMenu(name, mark) {
+                let li = createNode('li'),
+                    a  = createNode('a');
+
+                a.innerHTML = name;
+                a.href      = '#' + mark;
+                
+                append(li, a);
+                append(menu, li);
+            }
+
+            // 添加分组
+            function addGroup(group) {
+                // 先添加分组名称
+                addGroupName(group.name);
+                // 再添加网站
+                let siteArr = group.data;
+
+                siteArr.map(function (site, i) {
+                    if (i % 4 == 0) {
+                        let div       = createNode('div');
+                        div.className = 'columns';
+
+                        append(main, div);  
+                    }
+
+                    addGroupSite(site);
+                });
+                // 补全列
+                let groupArr = main.children;
+
+                for (let i = 0; i < groupArr.length; i++) {
+                    if (groupArr[i].nodeName != 'DIV') {
+                        continue;
+                    }
+
+                    let length = groupArr[i].children.length;
+
+                    if (length >= 4) {
+                        continue;
+                    }
+
+                    let emptyCount = 4 - length;
+
+                    for (let k = 0; k < emptyCount; k++) {
+                        let el = addEmpty();
+                        append(groupArr[i], el); 
+                    }
+                }
+            }
+
+            // 添加分组名称
+            function addGroupName(groupName) {
+                let h1 = createNode('h1');
+
+                h1.className = 'title';
+                h1.innerHTML = groupName;
+
+                append(main, h1);  
+            }
+
+            // 添加网站
+            function addGroupSite(site) {
+                let group = main.children;
+
+                for (let i = 0; i < group.length; i++) {
+                    if (group[i].nodeName != 'DIV') {
+                        continue;
+                    }
+
+                    if (group[i].children.length >= 4) {
+                        continue;
+                    }
+
+                    let html = '<div class="tags has-addons are-medium"><span class="tag"><span class="icon is-medium"><i class="' + site.icon + '"></i></span></span><span class="tag is-rounded is-primary"><a href="' + site.href + '" class="has-text-white" target="_blank">' + site.name + '</a></span></div>';
+                    let div  = createNode('div');
+
+                    div.className = 'column';
+                    div.innerHTML = html;
+
+                    append(group[i], div); 
+                }
+            }
+
+            //
+            function addEmpty() {
+                let div       = createNode('div');
+
+                div.className = 'column';
+
+                return div;  
+            }
+
+            // 创建节点
+            function createNode(element) {
+                return document.createElement(element);
+            }
+
+            // 追加节点
+            function append(parent, el) {
+                return parent.appendChild(el);
+            }
+        });
+    </script>
 </body>
 
 </html>
