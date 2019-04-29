@@ -13,8 +13,23 @@
     <div class="pageloader"><span class="title">Loading</span></div>
     <section class="section">
         <div class="container">
+            <!-- 搜索框 -->
+            <div class="columns is-centered">
+                <div class="column is-half">
+                    <div class="field">
+                        <p class="control has-icons-right">
+                            <input class="input is-focused is-rounded" id="search" type="text" placeholder="搜索" maxlength="20">
+                            <span class="icon is-small is-right">
+                                <i class="fas fa-search"></i>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
             <div class="columns">
+                <!-- 网站列表 -->
                 <div class="column" id="main"></div>
+                <!-- 快捷导航 -->
                 <div class="column is-1 is-hidden-touch" style="background-color: #fafafa;">
                     <aside class="menu">
                         <p class="menu-label">快捷导航</p>
@@ -25,28 +40,110 @@
         </div>
     </section>
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.4.4/fuse.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            var menu = document.getElementById("menu"),
-                main = document.getElementById("main");
+            var menu   = document.getElementById("menu"),
+                main   = document.getElementById("main"),
+                search = document.getElementById("search");
+            // 全局变量，所有的网站数据，用于搜索
+            var Data   = new Array();
+            // 搜索框获取焦点
+            search.focus();
+            // 初始化
+            init();
 
-            fetch('site.json')
-                .then(function (response) {
-                    if (response.ok) {
-                        let json = response.json();
+            // 搜索事件
+            search.addEventListener("keyup", function (event) {
+                event.preventDefault();
 
-                        json.then(function(data) {
-                            data.map(function (group) {
-                                addMenu(group.name, group.mark);
-                                addGroup(group);
-                            })
-                        });
+                if (search.value == '') {
+                    init();
+                    
+                    return;
+                }
+
+                if (event.keyCode === 13) {
+                    let data   = find(search.value);
+
+                    let group  = new Object();
+
+                    group.name = '搜索结果';
+                    group.mark = '';
+                    group.data = data;
+                    // 隐藏网站列表
+                    hideGroups();
+                    // 添加搜索结果
+                    addGroup(group);
+                }
+
+                if (event.keyCode === 27) {
+                    search.value = '';
+                    init();
+
+                    return;
+                }
+            });
+
+            // 搜索
+            function find(text) {
+                let config = {
+                    keys: [
+                        'name',
+                        'word'
+                    ]
+                };
+
+                let fuse = new Fuse(Data, config)
+
+                return fuse.search(text);
+            }
+
+            // 隐藏网站列表
+            function hideGroups() {
+                let groupArr = main.children;
+
+                for (let i = 0; i < groupArr.length; i++) {
+                    let isHidden = groupArr[i].classList.contains("is-hidden");
+
+                    if (! isHidden) {
+                        groupArr[i].classList.add('is-hidden');
                     }
-                })
-                .catch(function (error) {
-                    console.log(JSON.stringify(error));
-                });
-               
+                } 
+            }
+
+            // 初始化
+            function init() {
+                main.innerHTML = '';
+                menu.innerHTML = '';
+
+                fetch('site.json')
+                    .then(function (response) {
+                        if (response.ok) {
+                            let json = response.json();
+                            // 全局变量清空
+                            Data = []
+
+                            json.then(function(data) {  
+                                data.map(function (group) {
+                                    addMenu(group.name, group.mark);
+                                    addGroup(group);
+                                    // 将网站数据添加到全局变量，用于搜索
+                                    let siteArr = group.data;
+
+                                    siteArr.map(function (site) {
+                                        Data.push(site);
+                                    });
+                                })
+                            });
+                        }
+                    })
+                    .catch(function (error) {
+                        console.log(JSON.stringify(error));
+                    });
+            }
+
+
             // 添加快捷导航
             function addMenu(name, mark) {
                 let li = createNode('li'),
@@ -106,7 +203,7 @@
                 h1.className = 'title';
                 h1.innerHTML = groupName;
 
-                append(main, h1);  
+                append(main, h1);
             }
 
             // 添加网站
@@ -122,7 +219,15 @@
                         continue;
                     }
 
-                    let html = '<div class="tags has-addons are-medium"><span class="tag"><span class="icon is-medium"><i class="' + site.icon + '"></i></span></span><span class="tag is-rounded is-primary"><a href="' + site.href + '" class="has-text-white" target="_blank">' + site.name + '</a></span></div>';
+                    if (site.icon === undefined) {
+                        site.icon = 'fab fa-apple';
+                    }
+
+                    if (site.word === undefined) {
+                        site.word = '';
+                    }
+
+                    let html = '<div class="tags has-addons are-medium" title="' + site.word + '"><span class="tag"><span class="icon is-medium"><i class="' + site.icon + '"></i></span></span><span class="tag is-rounded is-primary"><a href="' + site.href + '" class="has-text-white" target="_blank">' + site.name + '</a></span></div>';
                     let div  = createNode('div');
 
                     div.className = 'column';

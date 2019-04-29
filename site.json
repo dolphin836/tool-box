@@ -5,23 +5,22 @@
         "data": [
             {
                 "name": "时间戳转换",
-                "href": "/TimestampTransform/index.html",
-                "icon": "fab fa-apple"
+                "word": "Unix 时间戳与时间字符串格式互转工具",
+                "href": "/TimestampTransform/index.html"
             },
             {
                 "name": "生成随机密码",
-                "href": "/GeneratorRandonPassword/index.html",
-                "icon": "fab fa-apple"
+                "word": "生成随机、安全的密码",
+                "href": "/GeneratorRandonPassword/index.html"
             },
             {
                 "name": "Json 转换",
-                "href": "/Json/index.html",
-                "icon": "fab fa-apple"
+                "word": "Json 格式转换",
+                "href": "/Json/index.html"
             },
             {
                 "name": "SQL 转换",
-                "href": "/SQL/index.html",
-                "icon": "fab fa-apple"
+                "href": "/SQL/index.html"
             }
         ]
     },
@@ -31,24 +30,185 @@
         "data": [
             {
                 "name": "Png 图片优化",
-                "href": "https://tinypng.com",
-                "icon": "fab fa-apple"
+                "href": "https://tinypng.com"
             },
             {
                 "name": "Jpg 图片优化",
-                "href": "https://tinyjpg.com",
-                "icon": "fab fa-apple"
+                "href": "https://tinyjpg.com"
+            },
+            {
+                "name": "移除图片背景",
+                "href": "https://www.remove.bg"
+            },
+            {
+                "name": "简历设计",
+                "href": "https://www.resumemaker.online/zh"
+            },
+            {
+                "name": "草料二维码",
+                "href": "https://cli.im"
+            },
+            {
+                "name": "Gitignore 文件生成",
+                "href": "https://www.gitignore.io"
+            },
+            {
+                "name": "时间校准",
+                "href": "https://time.is"
+            },
+            {
+                "name": "Linux command",
+                "href": "http://wangchujiang.com/linux-command"
+            },
+            {
+                "name": "JSON Web Token",
+                "href": "https://jwt.io"
+            },
+            {
+                "name": "PDF",
+                "href": "https://smallpdf.com"
+            },
+            {
+                "name": "选择开源协议",
+                "href": "http://choosealicense.online"
+            },
+            {
+                "name": "在线作图",
+                "href": "https://www.processon.com"
+            },
+            {
+                "name": "生成多终端预览图",
+                "href": "http://ami.responsivedesign.is"
+            },
+            {
+                "name": "JavaScript Code Example",
+                "href": "https://codetogo.io"
             }
         ]
     },
     {
         "name": "文 档",
-        "mark": "common",
+        "mark": "document",
         "data": [
             {
-                "name": "Bulma CSS Framework ",
-                "href": "https://bulma.io/documentation",
-                "icon": "fab fa-apple"
+                "name": "MDN",
+                "href": "https://developer.mozilla.org/zh-CN"
+            },
+            {
+                "name": "Bulma",
+                "href": "https://bulma.io/documentation"
+            },
+            {
+                "name": "Guzzle",
+                "href": "http://docs.guzzlephp.org/en/stable"
+            },
+            {
+                "name": "Slim",
+                "href": "http://www.slimframework.com/docs"
+            },
+            {
+                "name": "Twig",
+                "href": "https://twig.symfony.com"
+            },
+            {
+                "name": "Medoo",
+                "href": "https://medoo.in"
+            },
+            {
+                "name": "Swoole",
+                "href": "https://github.com/swoole/swoole-wiki"
+            },
+            {
+                "name": "Bootstrap 4",
+                "href": "https://getbootstrap.com/docs/4.0/getting-started/introduction"
+            },
+            {
+                "name": "CodeIgniter",
+                "href": "http://codeigniter.org.cn/user_guide"
+            },
+            {
+                "name": "微信支付",
+                "href": "https://pay.weixin.qq.com/wiki/doc/api/index.html"
+            },
+            {
+                "name": "微信公众平台",
+                "href": "https://mp.weixin.qq.com/wiki"
+            },
+            {
+                "name": "PHP Redis",
+                "href": "https://github.com/phpredis/phpredis"
+            }
+        ]
+    },
+    {
+        "name": "博 客",
+        "mark": "blog",
+        "data": [
+            {
+                "name": "阮一峰",
+                "href": "http://www.ruanyifeng.com/blog"
+            },
+            {
+                "name": "廖雪峰",
+                "href": "https://www.liaoxuefeng.com"
+            },
+            {
+                "name": "风雪之隅",
+                "href": "http://www.laruence.com"
+            },
+            {
+                "name": "海兵大侠",
+                "href": "https://github.com/dolphin836/Blog"
+            }
+        ]
+    },
+    {
+        "name": "软 件",
+        "mark": "software",
+        "data": [
+            {
+                "name": "Asciinema 命令行录像",
+                "href": "https://asciinema.org"
+            },
+            {
+                "name": "Windows 包管理",
+                "href": "https://chocolatey.org"
+            },
+            {
+                "name": "Rufus 启动盘制作",
+                "href": "https://rufus.ie"
+            },
+            {
+                "name": "MyCLI 补全和高亮",
+                "href": "https://www.mycli.net"
+            },
+            {
+                "name": "Everything",
+                "href": "https://www.voidtools.com/zh-cn"
+            }
+        ]
+    },
+    {
+        "name": "开 源",
+        "mark": "open-source",
+        "data": [
+            {
+                "name": "TensorFlow",
+                "href": "https://tensorflow.google.cn"
+            },
+            {
+                "name": "Redis",
+                "href": "https://redis.io/"
+            }
+        ]
+    },
+    {
+        "name": "学 习",
+        "mark": "learn",
+        "data": [
+            {
+                "name": "Learn JavaScript",
+                "href": "https://learnjavascript.online"
             }
         ]
     }
