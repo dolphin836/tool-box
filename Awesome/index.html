@@ -5,7 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>工具箱 - ToolBox</title>
-    <link rel="stylesheet" href="/Awesome/dist/css/awesome-201a09db59.css">
+    <!-- build:awesome-css -->
+    <link rel="stylesheet" href="./node_modules/bulma/css/bulma.css">
+    <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.css">
+    <link rel="stylesheet" href="Awesome.css">
+    <!-- endbuild -->
 </head>
 
 <body>
@@ -38,7 +42,15 @@
             </div>
         </div>
     </section>
-    <script>const GROUP = "/Awesome/site-a06ff7631d.json";</script>
-    <script src="/Awesome/dist/js/awesome-75668566fb.js"></script></body>
+    <!-- build:group-json -->
+    <script>
+        const GROUP = 'site.json';
+    </script>
+    <!-- endbuild -->
+    <!-- build:awesome-script -->
+    <script defer src="./node_modules/fuse.js/dist/fuse.js"></script>
+    <script src="Awesome.js"></script>
+    <!-- endbuild -->
+</body>
 
 </html>

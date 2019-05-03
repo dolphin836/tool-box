@@ -1,0 +1,10 @@
+.title {
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #F5F5F5;
+    position: relative;
+    cursor: pointer;
+}
+
+.title span {
+    margin-left: 1rem;
+}
