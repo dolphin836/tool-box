@@ -4,8 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
         search = document.getElementById("search");
     // 全局变量，所有的网站数据，用于搜索
     var Data   = new Array();
-    // 搜索框获取焦点
-    search.focus();
     // 初始化
     init();
 
@@ -73,31 +71,45 @@ document.addEventListener('DOMContentLoaded', () => {
         main.innerHTML = '';
         menu.innerHTML = '';
         // 从本地读取数据
-        let data = store.get('data');
+        let data  = store.get('data');
+        // 得到 Json 文件的 Hash 值
+        let sHash = getHash();
+        // 得到本地存储的 Hash 值
+        let cHash = store.get('hash');
         // 从本地读取数据失败，从服务器获取数据
-        if (data === undefined) {
-            fetch(GROUP)
-                .then(function (response) {
-                    if (response.ok) {
-                        let json = response.json();
-                        // 全局变量清空
-                        Data = []
-
-                        json.then(function(data) {  
-                            // 将数据存储到本地
-                            store.set('data', data);
-                            // 渲染数据
-                            draw(data);
-                        });
-                    }
-                })
-                .catch(function (error) {
-                    console.log(JSON.stringify(error));
-                });
+        if (data === undefined || cHash === undefined || cHash !== sHash) {
+            // 从服务器获取数据
+            get(GROUP);
         } else {
             // 渲染数据
             draw(data);
         }
+    }
+
+    // 从服务器获取数据
+    function get(server) {
+        let hash = getHash();
+        // 将数据 Hash 值存储到本地
+        store.set('hash', hash);
+
+        fetch(server)
+            .then(function (response) {
+                if (response.ok) {
+                    let json = response.json();
+                    // 全局变量清空
+                    Data = []
+
+                    json.then(function(data) {  
+                        // 将数据存储到本地
+                        store.set('data', data);
+                        // 渲染数据
+                        draw(data);
+                    });
+                }
+            })
+            .catch(function (error) {
+                console.log(JSON.stringify(error));
+            });
     }
 
     // 渲染数据
@@ -112,6 +124,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 Data.push(site);
             });
         }); 
+    }
+
+    // 得到 Json 文件的 Hash 值
+    function getHash() {
+        let strArr = GROUP.split('-');
+
+        if (strArr.length == 1) {
+            return false;
+        }
+
+        let hash = strArr[1].split('.');
+
+        return hash[0];
     }
 
     // 添加快捷导航

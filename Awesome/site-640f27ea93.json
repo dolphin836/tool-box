@@ -17,11 +17,12 @@
             },
             {
                 "name": "Json 转换",
-                "word": "Json 格式转换",
+                "word": "Json 格式转换工具",
                 "href": "/Json/index.html"
             },
             {
                 "name": "SQL 转换",
+                "word": "SQL 格式转换工具",
                 "href": "/SQL/index.html"
             }
         ]
@@ -229,7 +230,11 @@
             },
             {
                 "name": "Redis",
-                "href": "https://redis.io/"
+                "href": "https://redis.io"
+            },
+            {
+                "name": "Memcached",
+                "href": "https://memcached.org"
             }
         ]
     },
