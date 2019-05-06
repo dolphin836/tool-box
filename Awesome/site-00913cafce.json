@@ -194,11 +194,13 @@
         "mark": "software",
         "data": [
             {
-                "name": "Asciinema 命令行录像",
+                "name": "Asciinema",
+                "word": "命令行录像、分享工具",
                 "href": "https://asciinema.org"
             },
             {
-                "name": "Windows 包管理",
+                "name": "Chocolatey",
+                "word": "Windows 包管理",
                 "href": "https://chocolatey.org",
                 "icon": "fab fa-windows"
             },

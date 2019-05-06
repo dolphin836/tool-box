@@ -72,33 +72,47 @@ document.addEventListener('DOMContentLoaded', () => {
     function init() {
         main.innerHTML = '';
         menu.innerHTML = '';
+        // 从本地读取数据
+        let data = store.get('data');
+        // 从本地读取数据失败，从服务器获取数据
+        if (data === undefined) {
+            fetch(GROUP)
+                .then(function (response) {
+                    if (response.ok) {
+                        let json = response.json();
+                        // 全局变量清空
+                        Data = []
 
-        fetch(GROUP)
-            .then(function (response) {
-                if (response.ok) {
-                    let json = response.json();
-                    // 全局变量清空
-                    Data = []
-
-                    json.then(function(data) {  
-                        data.map(function (group) {
-                            addMenu(group.name, group.mark);
-                            addGroup(group);
-                            // 将网站数据添加到全局变量，用于搜索
-                            let siteArr = group.data;
-
-                            siteArr.map(function (site) {
-                                Data.push(site);
-                            });
-                        })
-                    });
-                }
-            })
-            .catch(function (error) {
-                console.log(JSON.stringify(error));
-            });
+                        json.then(function(data) {  
+                            // 将数据存储到本地
+                            store.set('data', data);
+                            // 渲染数据
+                            draw(data);
+                        });
+                    }
+                })
+                .catch(function (error) {
+                    console.log(JSON.stringify(error));
+                });
+        } else {
+            // 渲染数据
+            draw(data);
+        }
     }
 
+    // 渲染数据
+    function draw(data) {
+        data.map(function (group) {
+            addMenu(group.name, group.mark);
+            addGroup(group);
+            // 将网站数据添加到全局变量，用于搜索
+            let siteArr = group.data;
+
+            siteArr.map(function (site) {
+                Data.push(site);
+            });
+        }); 
+    }
 
     // 添加快捷导航
     function addMenu(name, mark) {
