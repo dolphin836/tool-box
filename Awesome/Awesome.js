@@ -88,10 +88,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 从服务器获取数据
     function get(server) {
-        let hash = getHash();
+        let sHash = getHash();
         // 将数据 Hash 值存储到本地
-        store.set('hash', hash);
-
+        if (sHash) {
+            store.set('hash', sHash);
+        }
+        
         fetch(server)
             .then(function (response) {
                 if (response.ok) {
