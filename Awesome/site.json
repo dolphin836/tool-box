@@ -219,6 +219,11 @@
                 "name": "Everything",
                 "href": "https://www.voidtools.com/zh-cn",
                 "icon": "fab fa-sistrix"
+            },
+            {
+                "name": "火绒安全",
+                "href": "https://www.huorong.cn",
+                "icon": "fab fa-expeditedssl"
             }
         ]
     },
