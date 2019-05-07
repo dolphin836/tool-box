@@ -241,11 +241,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 site.icon = 'far fa-circle';
             }
 
-            if (site.word === undefined) {
-                site.word = '';
+            let word = '';
+
+            if (site.word !== undefined) {
+                word = site.word;
             }
 
-            let html = '<div class="tags has-addons are-medium" title="' + site.word + '"><span class="tag"><span class="icon is-medium"><i class="' + site.icon + '"></i></span></span><span class="tag is-rounded is-primary"><a href="' + site.href + '" class="has-text-white" target="_blank">' + site.name + '</a></span></div>';
+            if (site.mark !== undefined) {
+                word += '\n快捷键：' + site.mark;
+            }
+
+            let html = '<div class="tags has-addons are-medium" title="' + word + '"><span class="tag"><span class="icon is-medium"><i class="' + site.icon + '"></i></span></span><span class="tag is-rounded is-primary"><a href="' + site.href + '" class="has-text-white" target="_blank">' + site.name + '</a></span></div>';
             let div  = createNode('div');
 
             div.className = 'column';

@@ -7,7 +7,8 @@
                 "name": "时间戳转换",
                 "word": "Unix 时间戳与时间字符串格式互转工具",
                 "href": "/TimestampTransform/index.html",
-                "icon": "far fa-clock"
+                "icon": "far fa-clock",
+                "mark": "A"
             },
             {
                 "name": "生成随机密码",
@@ -34,7 +35,8 @@
             {
                 "name": "Png 图片优化",
                 "href": "https://tinypng.com",
-                "icon": "far fa-file-image"
+                "icon": "far fa-file-image",
+                "mark": "P"
             },
             {
                 "name": "Jpg 图片优化",
