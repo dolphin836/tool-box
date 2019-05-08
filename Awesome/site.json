@@ -255,5 +255,68 @@
                 "icon": "fab fa-jsfiddle"
             }
         ]
+    },
+    {
+        "name": "前 端",
+        "mark": "frontend",
+        "data": [
+            {
+                "name": "React",
+                "word": "A JavaScript library for building user interfaces",
+                "href": "https://reactjs.org",
+                "icon": "fab fa-react"
+            },
+            {
+                "name": "Webpack",
+                "href": "https://webpack.js.org"
+            },
+            {
+                "name": "Gulp",
+                "href": "https://gulpjs.com"
+            }
+        ]
+    },
+    {
+        "name": "社 区",
+        "mark": "community",
+        "data": [
+            {
+                "name": "GitHub",
+                "href": "https://github.com"
+            },
+            {
+                "name": "掘金",
+                "word": "一个帮助开发者成长的社区",
+                "href": "https://juejin.im"
+            },
+            {
+                "name": "SegmentFault 思否",
+                "href": "https://segmentfault.com"
+            },
+            {
+                "name": "少数派",
+                "word": "高效工作，品质生活",
+                "href": "https://sspai.com"
+            },
+            {
+                "name": "Reddit",
+                "word": "The front page of the internet",
+                "href": "https://www.reddit.com"
+            },
+            {
+                "name": "InfoQ 中国",
+                "word": "促进软件开发领域知识与创新的传播",
+                "href": "https://www.infoq.cn"
+            },
+            {
+                "name": "Medium",
+                "word": "A place to read and write big ideas and important stories",
+                "href": "https://medium.com"
+            },
+            {
+                "name": "V2EX",
+                "href": "https://www.v2ex.com"
+            }
+        ]
     }
 ]
