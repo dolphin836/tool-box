@@ -259,6 +259,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
             append(group[i], div); 
         }
+        // 绑定键盘快捷键
+        if (site.mark !== undefined) {
+            Mousetrap.bind(site.mark, function() {
+                window.open(site.href);
+            });
+        }
     }
 
     //
