@@ -98,9 +98,8 @@
                 "href": "http://ami.responsivedesign.is"
             },
             {
-                "name": "JavaScript Code Example",
-                "href": "https://codetogo.io",
-                "icon": "fab fa-jsfiddle"
+                "name": "Base64 Image Encoder",
+                "href": "https://www.base64-image.de"
             }
         ]
     },
@@ -237,6 +236,16 @@
                 "name": "火绒安全",
                 "href": "https://www.huorong.cn",
                 "icon": "fab fa-expeditedssl"
+            },
+            {
+                "name": "ExpressVPN",
+                "href": "https://www.get-express-vpn.com"
+            },
+            {
+                "name": "石墨文档",
+                "href": "https://shimo.im/welcome",
+                "word": "全新一代云端 Office，面向未来的办公软件",
+                "icon": "far fa-file-word"
             }
         ]
     },
@@ -266,6 +275,16 @@
                 "name": "Learn JavaScript",
                 "href": "https://learnjavascript.online",
                 "icon": "fab fa-jsfiddle"
+            },
+            {
+                "name": "JavaScript Code Example",
+                "href": "https://codetogo.io",
+                "icon": "fab fa-jsfiddle"
+            },
+            {
+                "name": "Love2 开源文档",
+                "href": "https://love2.io",
+                "word": "一个全新的开源技术文档分享平台"
             }
         ]
     },
@@ -280,8 +299,20 @@
                 "icon": "fab fa-react"
             },
             {
+                "name": "Vue",
+                "word": "The Progressive JavaScript Framework",
+                "href": "https://vuejs.org",
+                "icon": "fab fa-vuejs"
+            },
+            {
                 "name": "NPM",
-                "href": "https://www.npmjs.com"
+                "href": "https://www.npmjs.com",
+                "icon": "fab fa-npm"
+            },
+            {
+                "name": "淘宝 NPM 镜像",
+                "href": "https://npm.taobao.org",
+                "icon": "fab fa-npm"
             },
             {
                 "name": "Webpack",
@@ -289,7 +320,32 @@
             },
             {
                 "name": "Gulp",
-                "href": "https://gulpjs.com"
+                "href": "https://gulpjs.com",
+                "icon": "fab fa-gulp"
+            },
+            {
+                "name": "Iconfont",
+                "word": "阿里巴巴矢量图标库",
+                "href": "https://www.iconfont.cn"
+            },
+            {
+                "name": "Can I Use",
+                "href": "https://caniuse.com"
+            },
+            {
+                "name": "Sass",
+                "href": "https://sass-lang.com",
+                "icon": "fab fa-sass"
+            },
+            {
+                "name": "Ant Design",
+                "href": "https://ant.design"
+            },
+            {
+                "name": "CodePen",
+                "word": "CodePen is a social development environment for front-end designers and developers.",
+                "href": "https://codepen.io",
+                "icon": "fab fa-codepen"
             }
         ]
     },
@@ -333,6 +389,15 @@
             {
                 "name": "V2EX",
                 "href": "https://www.v2ex.com"
+            },
+            {
+                "name": "CODING",
+                "word": "一站式软件研发管理平台",
+                "href": "https://coding.net"
+            },
+            {
+                "name": "简书",
+                "href": "https://www.jianshu.com"
             }
         ]
     }
