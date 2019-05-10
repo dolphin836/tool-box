@@ -1,38 +1,48 @@
 document.addEventListener('DOMContentLoaded', () => {
-    var menu   = document.getElementById("menu"),
-        main   = document.getElementById("main"),
-        search = document.getElementById("search");
+    var menu        = document.getElementById("menu"),
+        main        = document.getElementById("main"),
+        search      = document.getElementById("search"),
+        searchInput = document.getElementById("search-input");
     // 全局变量，所有的网站数据，用于搜索
     var Data   = new Array();
     // 初始化
     init();
 
     // 搜索事件
-    search.addEventListener("keyup", function (event) {
+    search.addEventListener("click", function () {
+        if (searchInput.value == '') {
+            return;
+        }
+
+        let data   = find(searchInput.value);
+
+        let group  = new Object();
+
+        group.name = '搜索结果';
+        group.mark = '';
+        group.data = data;
+        // 隐藏网站列表
+        hideGroups();
+        // 添加搜索结果
+        addGroup(group);
+
+    });
+
+    searchInput.addEventListener("keyup", function (event) {
         event.preventDefault();
 
-        if (search.value == '') {
+        if (searchInput.value == '') {
             init();
             
             return;
         }
 
         if (event.keyCode === 13) {
-            let data   = find(search.value);
-
-            let group  = new Object();
-
-            group.name = '搜索结果';
-            group.mark = '';
-            group.data = data;
-            // 隐藏网站列表
-            hideGroups();
-            // 添加搜索结果
-            addGroup(group);
+            search.click();
         }
 
         if (event.keyCode === 27) {
-            search.value = '';
+            searchInput.value = '';
             init();
 
             return;

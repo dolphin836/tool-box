@@ -9,3 +9,8 @@
 .title span {
     margin-left: 1rem;
 }
+
+.control.has-icons-right .icon {
+    pointer-events: auto;
+    cursor: pointer;
+}
