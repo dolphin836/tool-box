@@ -250,6 +250,27 @@
                 "href": "https://shimo.im/welcome",
                 "word": "全新一代云端 Office，面向未来的办公软件",
                 "icon": "far fa-file-word"
+            },
+            {
+                "name": "Youtube-dl",
+                "href": "http://ytdl-org.github.io/youtube-dl",
+                "word": "Download videos from YouTube or more sites",
+                "icon": "fab fa-youtube"
+            },
+            {
+                "name": "Postman",
+                "href": "https://www.getpostman.com",
+                "word": "API Development Environment"
+            },
+            {
+                "name": "Redis Desktop Manager",
+                "href": "https://redisdesktop.com",
+                "word": "Redis GUI management tool for Windows, Mac OS X, Ubuntu and Debian."
+            },
+            {
+                "name": "DBeaver Community",
+                "href": "https://dbeaver.io",
+                "word": "Free Universal Database Tool"
             }
         ]
     },
@@ -289,6 +310,11 @@
                 "name": "Love2 开源文档",
                 "href": "https://love2.io",
                 "word": "一个全新的开源技术文档分享平台"
+            },
+            {
+                "name": "LeetCode",
+                "href": "https://leetcode.com",
+                "word": "The World's Leading Online Programming Learning Platform"
             }
         ]
     },
@@ -402,6 +428,24 @@
             {
                 "name": "简书",
                 "href": "https://www.jianshu.com"
+            }
+        ]
+    },
+    {
+        "name": "游 戏",
+        "mark": "game",
+        "data": [
+            {
+                "name": "俄罗斯方块",
+                "href": "https://github.com/chvin/react-tetris"
+            },
+            {
+                "name": "坦克大战",
+                "href": "https://github.com/shinima/battle-city"
+            },
+            {
+                "name": "2048",
+                "href": "https://github.com/devrsi0n/React-2048-game"
             }
         ]
     }
