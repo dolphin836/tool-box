@@ -16,7 +16,7 @@ gulp.task('font', function() {
 
 // Site 文件
 gulp.task('json', function() {
-    gulp.src('./site.json')
+    gulp.src(['./en.json', './cn.json'])
         .pipe(rev())
         .pipe(gulp.dest('.'))
         .pipe(rev.manifest({
@@ -40,7 +40,7 @@ gulp.task('awesome-css', function() {
 
 // JavaScript 文件
 gulp.task('awesome-script', function() {                         
-    gulp.src(['./node_modules/fuse.js/dist/fuse.js', './node_modules/store/dist/store.modern.min.js', './node_modules/mousetrap/mousetrap.js', './Awesome.js'])
+    gulp.src(['./node_modules/fuse.js/dist/fuse.js', './node_modules/store/dist/store.modern.min.js', './node_modules/mousetrap/mousetrap.js', './node_modules/smooth-scroll/dist/smooth-scroll.polyfills.js', './Awesome.js'])
         .pipe(uglify())
         .pipe(concat('awesome.js'))
         .pipe(rev())
@@ -52,11 +52,12 @@ gulp.task('awesome-script', function() {
 });
 
 gulp.task('rev', function() {
-    gulp.src(['./dist/rev/*.json', './index.html'])
+    gulp.src(['./dist/rev/*.json', './index.html', './en.html'])
         .pipe(htmlReplace({
             'awesome-css': '/Awesome/dist/css/awesome.css',
             'awesome-script': '/Awesome/dist/js/awesome.js',
-            'group-json': '<script>const GROUP = "/Awesome/site.json";</script>'
+            'group-cn-json': '<script>const GROUP = "/Awesome/cn.json";</script>',
+            'group-en-json': '<script>const GROUP = "/Awesome/en.json";</script>'
         }))
         .pipe(revCollector())
         .pipe(gulp.dest('../'))
@@ -68,7 +69,8 @@ gulp.task('clean', function() {
     (
         [
             'dist',
-            'site-*.json'
+            'en-*.json',
+            'cn-*.json'
         ]
     )
 });

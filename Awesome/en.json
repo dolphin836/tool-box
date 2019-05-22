@@ -1,73 +1,63 @@
 [
     {
-        "name": "常 用",
-        "mark": "common",
+        "name": "Recommend",
+        "mark": "recommend",
         "data": [
             {
-                "name": "时间戳转换",
-                "word": "Unix 时间戳与时间字符串格式互转工具",
+                "name": "Timestamp Transform",
                 "href": "/TimestampTransform/index.html",
                 "icon": "far fa-clock",
                 "mark": "1"
             },
             {
-                "name": "生成随机密码",
-                "word": "生成随机、安全的密码",
+                "name": "Generator Randon Password",
+                "word": "Generator randon password.",
                 "href": "/GeneratorRandonPassword/index.html",
                 "icon": "fab fa-expeditedssl",
                 "mark": "2"
             },
             {
-                "name": "Json 转换",
-                "word": "Json 格式转换工具",
+                "name": "Json Transform",
+                "word": "Json transform Tool",
                 "href": "/Json/index.html",
                 "mark": "3"
             },
             {
-                "name": "SQL 转换",
-                "word": "SQL 格式转换工具",
+                "name": "SQL Transform",
+                "word": "SQL transform Tool.",
                 "href": "/SQL/index.html",
                 "mark": "4"
             }
         ]
     },
     {
-        "name": "工 具",
+        "name": "Tool",
         "mark": "tool",
         "data": [
             {
-                "name": "Png 图片优化",
+                "name": "Picture compression",
                 "href": "https://tinypng.com",
                 "icon": "far fa-file-image",
                 "mark": "5"
             },
             {
-                "name": "Jpg 图片优化",
-                "href": "https://tinyjpg.com",
-                "icon": "far fa-file-image",
-                "mark": "6"
-            },
-            {
-                "name": "移除图片背景",
+                "name": "Remove Image Background",
                 "href": "https://www.remove.bg",
                 "icon": "far fa-file-image"
             },
             {
-                "name": "简历设计",
-                "href": "https://www.resumemaker.online/zh"
+                "name": "ResumeMaker",
+                "href": "https://www.resumemaker.online/en",
+                "word": "Design your resume for free, no sign-up required."
             },
             {
-                "name": "草料二维码",
-                "href": "https://cli.im",
-                "icon": "fas fa-qrcode"
-            },
-            {
-                "name": "Gitignore 文件生成",
+                "name": "Gitignore",
                 "href": "https://www.gitignore.io",
+                "word": "Create useful .gitignore files for your project",
                 "icon": "fab fa-git"
             },
             {
-                "name": "时间校准",
+                "name": "Time Is",
                 "href": "https://time.is"
             },
             {
@@ -80,21 +70,16 @@
                 "href": "https://jwt.io"
             },
             {
-                "name": "PDF 文件处理",
+                "name": "PDF File Make",
                 "href": "https://smallpdf.com",
                 "icon": "far fa-file-pdf"
             },
             {
-                "name": "选择开源协议",
+                "name": "Choosea License",
                 "href": "http://choosealicense.online"
             },
             {
-                "name": "在线作图",
-                "href": "https://www.processon.com",
-                "icon": "far fa-file-powerpoint"
-            },
-            {
-                "name": "生成多终端预览图",
+                "name": "Am I Responsive",
                 "href": "http://ami.responsivedesign.is"
             },
             {
@@ -104,7 +89,7 @@
         ]
     },
     {
-        "name": "文 档",
+        "name": "Document",
         "mark": "document",
         "data": [
             {
@@ -160,16 +145,6 @@
                 "icon": "fab fa-php"
             },
             {
-                "name": "微信支付",
-                "href": "https://pay.weixin.qq.com/wiki/doc/api/index.html",
-                "icon": "fab fa-weixin"
-            },
-            {
-                "name": "微信公众平台",
-                "href": "https://mp.weixin.qq.com/wiki",
-                "icon": "fab fa-weixin"
-            },
-            {
                 "name": "PHP Redis",
                 "href": "https://github.com/phpredis/phpredis",
                 "icon": "fab fa-php"
@@ -182,74 +157,39 @@
         ]
     },
     {
-        "name": "博 客",
-        "mark": "blog",
-        "data": [
-            {
-                "name": "阮一峰",
-                "href": "http://www.ruanyifeng.com/blog"
-            },
-            {
-                "name": "廖雪峰",
-                "href": "https://www.liaoxuefeng.com"
-            },
-            {
-                "name": "风雪之隅",
-                "href": "http://www.laruence.com"
-            },
-            {
-                "name": "酷壳",
-                "href": "https://coolshell.cn"
-            },
-            {
-                "name": "海兵大侠",
-                "href": "https://github.com/dolphin836/Blog",
-                "mark": "d"
-            }
-        ]
-    },
-    {
-        "name": "软 件",
+        "name": "Software",
         "mark": "software",
         "data": [
             {
                 "name": "Asciinema",
-                "word": "命令行录像、分享工具",
+                "word": "Record and share your terminal sessions, the right way.",
                 "href": "https://asciinema.org"
             },
             {
                 "name": "Chocolatey",
-                "word": "Windows 包管理",
+                "word": "The package manager for Windows.",
                 "href": "https://chocolatey.org",
                 "icon": "fab fa-windows"
             },
             {
-                "name": "Rufus 启动盘制作",
+                "name": "Rufus",
+                "word": "Create bootable USB drives the easy way.",
                 "href": "https://rufus.ie"
             },
             {
-                "name": "MyCLI 补全和高亮",
+                "name": "MyCLI",
+                "word": "MyCLI is a command line interface for MySQL, MariaDB, and Percona with auto-completion and syntax highlighting.",
                 "href": "https://www.mycli.net"
             },
             {
                 "name": "Everything",
-                "href": "https://www.voidtools.com/zh-cn",
+                "href": "https://www.voidtools.com/en-us",
+                "word": "Locate files and folders by name instantly.",
                 "icon": "fab fa-sistrix"
-            },
-            {
-                "name": "火绒安全",
-                "href": "https://www.huorong.cn",
-                "icon": "fab fa-expeditedssl"
             },
             {
                 "name": "ExpressVPN",
                 "href": "https://www.get-express-vpn.com"
-            },
-            {
-                "name": "石墨文档",
-                "href": "https://shimo.im/welcome",
-                "word": "全新一代云端 Office，面向未来的办公软件",
-                "icon": "far fa-file-word"
             },
             {
                 "name": "Youtube-dl",
@@ -275,12 +215,12 @@
         ]
     },
     {
-        "name": "开 源",
+        "name": "Open Source",
         "mark": "open-source",
         "data": [
             {
                 "name": "TensorFlow",
-                "href": "https://tensorflow.google.cn"
+                "href": "https://www.tensorflow.org"
             },
             {
                 "name": "Redis",
@@ -293,7 +233,7 @@
         ]
     },
     {
-        "name": "学 习",
+        "name": "Learn",
         "mark": "learn",
         "data": [
             {
@@ -307,11 +247,6 @@
                 "icon": "fab fa-jsfiddle"
             },
             {
-                "name": "Love2 开源文档",
-                "href": "https://love2.io",
-                "word": "一个全新的开源技术文档分享平台"
-            },
-            {
                 "name": "LeetCode",
                 "href": "https://leetcode.com",
                 "word": "The World's Leading Online Programming Learning Platform"
@@ -319,7 +254,7 @@
         ]
     },
     {
-        "name": "前 端",
+        "name": "Frontend",
         "mark": "frontend",
         "data": [
             {
@@ -340,11 +275,6 @@
                 "icon": "fab fa-npm"
             },
             {
-                "name": "淘宝 NPM 镜像",
-                "href": "https://npm.taobao.org",
-                "icon": "fab fa-npm"
-            },
-            {
                 "name": "Webpack",
                 "href": "https://webpack.js.org"
             },
@@ -352,11 +282,6 @@
                 "name": "Gulp",
                 "href": "https://gulpjs.com",
                 "icon": "fab fa-gulp"
-            },
-            {
-                "name": "Iconfont",
-                "word": "阿里巴巴矢量图标库",
-                "href": "https://www.iconfont.cn"
             },
             {
                 "name": "Can I Use",
@@ -380,7 +305,7 @@
         ]
     },
     {
-        "name": "社 区",
+        "name": "Community",
         "mark": "community",
         "data": [
             {
@@ -388,64 +313,37 @@
                 "href": "https://github.com"
             },
             {
-                "name": "掘金",
-                "word": "一个帮助开发者成长的社区",
-                "href": "https://juejin.im"
-            },
-            {
-                "name": "SegmentFault 思否",
-                "href": "https://segmentfault.com"
-            },
-            {
-                "name": "少数派",
-                "word": "高效工作，品质生活",
-                "href": "https://sspai.com"
-            },
-            {
                 "name": "Reddit",
                 "word": "The front page of the internet",
                 "href": "https://www.reddit.com"
             },
             {
-                "name": "InfoQ 中国",
-                "word": "促进软件开发领域知识与创新的传播",
-                "href": "https://www.infoq.cn"
+                "name": "InfoQ",
+                "word": "Software Development News, Videos & Books",
+                "href": "https://www.infoq.com"
             },
             {
                 "name": "Medium",
                 "word": "A place to read and write big ideas and important stories",
                 "href": "https://medium.com"
-            },
-            {
-                "name": "V2EX",
-                "href": "https://www.v2ex.com"
-            },
-            {
-                "name": "CODING",
-                "word": "一站式软件研发管理平台",
-                "href": "https://coding.net"
-            },
-            {
-                "name": "简书",
-                "href": "https://www.jianshu.com"
             }
         ]
     },
     {
-        "name": "游 戏",
+        "name": "Game",
         "mark": "game",
         "data": [
             {
-                "name": "俄罗斯方块",
-                "href": "https://github.com/chvin/react-tetris"
+                "name": "Tetris",
+                "href": "https://chvin.github.io/react-tetris/?lan=en"
             },
             {
-                "name": "坦克大战",
-                "href": "https://github.com/shinima/battle-city"
+                "name": "Battle City Remake",
+                "href": "https://battle-city.js.org"
             },
             {
                 "name": "2048",
-                "href": "https://github.com/devrsi0n/React-2048-game"
+                "href": "http://ivanvergiliev.github.io/2048-react"
             }
         ]
     }

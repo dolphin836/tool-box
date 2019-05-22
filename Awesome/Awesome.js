@@ -1,12 +1,55 @@
 document.addEventListener('DOMContentLoaded', () => {
-    var menu        = document.getElementById("menu"),
-        main        = document.getElementById("main"),
-        search      = document.getElementById("search"),
-        searchInput = document.getElementById("search-input");
+    var menu         = document.getElementById("menu"),
+        main         = document.getElementById("main"),
+        search       = document.getElementById("search"),
+        searchInput  = document.getElementById("search-input"),
+        navbarBurger = document.getElementById("navbar-burger"),
+        navbarMenu   = document.getElementById("navbar-menu"),
+        topButton    = document.getElementById("top-button");
+        
     // 全局变量，所有的网站数据，用于搜索
-    var Data   = new Array();
+    var Data = new Array();
+    // 返回顶部按钮是否隐藏
+    var isHiddenTopButton = true;
     // 初始化
     init();
+
+    // 初始化滚动事件
+    new SmoothScroll('a[href*="#"]', {
+        updateURL: false,
+        offset: 80
+    });
+
+    // 滚动回调事件
+    document.addEventListener('scrollStart', function () {
+        let isActive = navbarBurger.classList.contains("is-active");
+
+        if (isActive) {
+            navbarBurger.classList.remove('is-active');
+            navbarMenu.classList.remove('is-active');
+        }
+    }, false);
+
+    // 页面滚动事件：控制返回顶部按钮的显示和隐藏
+    window.addEventListener('scroll', function(e) {
+        let Y = window.scrollY;
+
+        if (Y >= 337 && isHiddenTopButton) {
+            topButton.classList.remove("is-hidden");
+            isHiddenTopButton = false;
+        }
+
+        if (Y < 337 && ! isHiddenTopButton) {
+            topButton.classList.add("is-hidden");
+            isHiddenTopButton = true;
+        }
+    });
+
+    // 导航栏
+    navbarBurger.addEventListener("click", function () {
+        navbarBurger.classList.toggle('is-active');
+        navbarMenu.classList.toggle('is-active');
+    });
 
     // 搜索事件
     search.addEventListener("click", function () {
@@ -151,16 +194,16 @@ document.addEventListener('DOMContentLoaded', () => {
         return hash[0];
     }
 
-    // 添加快捷导航
+    // 添加快捷导航 <a class="navbar-item">
     function addMenu(name, mark) {
-        let li = createNode('li'),
-            a  = createNode('a');
+        let a  = createNode('a');
 
+        a.className = 'navbar-item';
         a.innerHTML = name;
         a.href      = '#' + mark;
         
-        append(li, a);
-        append(menu, li);
+        // append(li, a);
+        append(menu, a);
     }
 
     // 添加分组

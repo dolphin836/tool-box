@@ -14,3 +14,9 @@
     pointer-events: auto;
     cursor: pointer;
 }
+
+.top {
+    position: fixed;
+    right: 4rem;
+    bottom: 4rem;
+}

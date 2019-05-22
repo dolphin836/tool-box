@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html class="has-navbar-fixed-top">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>程序员导航 - Programmer Awesome</title>
+    <title>程序员导航</title>
     <link href="favicon.ico" rel="icon" type="image/x-icon">
     <!-- build:awesome-css -->
     <link rel="stylesheet" href="./node_modules/bulma/css/bulma.css">
@@ -14,10 +14,39 @@
 </head>
 
 <body>
+    <nav class="navbar is-primary is-fixed-top" role="navigation" aria-label="main navigation">
+        <div class="container">
+                <div class="navbar-brand">
+                    <a role="button" class="navbar-burger" id="navbar-burger" aria-label="menu" aria-expanded="false">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+            <div class="navbar-menu" id="navbar-menu">
+                <div class="navbar-start" id="menu"></div>
+    
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <!-- 语言切换 -->
+                        <div class="tags has-addons is-pulled-right">
+                            <span class="tag is-black">
+                                <a href="index.html" class="has-text-white">中文</a>
+                            </span>
+                            <span class="tag is-link">
+                                <a href="en.html" class="has-text-white">English</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
     <section class="section">
         <div class="container">
             <!-- Logo -->
-            <div class="columns is-centered">
+            <div class="columns is-centered" id="logo">
                 <div class="column is-half">
                     <h1 class="is-size-1 has-text-black has-text-centered">程序员导航</h1>
                 </div>
@@ -35,21 +64,17 @@
                     </div>
                 </div>
             </div>
-
-            <div class="columns">
-                <!-- 网站列表 -->
-                <div class="column" id="main">
-                </div>
-                <!-- 快捷导航 -->
-                <div class="column is-1 is-hidden-touch" style="background-color: #fafafa;">
-                    <aside class="menu">
-                        <p class="menu-label">快捷导航</p>
-                        <ul class="menu-list" id="menu"></ul>
-                    </aside>
-                </div>
-            </div>
         </div>
+        <!-- 网站列表 -->
+        <div class="container" id="main" style="margin-top: 2rem;"></div>
     </section>
+    <!-- 返回顶部 -->
+    <a class="top is-size-3 has-text-grey-light is-hidden" id="top-button" href="#logo" title="返回顶部">
+        <span class="icon is-small">
+            <i class="fas fa-arrow-alt-circle-up"></i>
+        </span>
+    </a>
+
     <footer class="footer">
         <div class="content has-text-centered">
             <p style="margin-bottom: .4rem;">&copy; 2019 <a href="https://www.haibing.site">程序员导航</a> BY <a href="https://github.com/dolphin836/Blog" target="_blank">海兵大侠</a></p>
@@ -58,15 +83,16 @@
             </p>
         </div>
     </footer>
-    <!-- build:group-json -->
+    <!-- build:group-cn-json -->
     <script>
-        const GROUP = 'site.json';
+        const GROUP = 'cn.json';
     </script>
     <!-- endbuild -->
     <!-- build:awesome-script -->
     <script defer src="./node_modules/fuse.js/dist/fuse.js"></script>
     <script defer src="./node_modules/store/dist/store.modern.min.js"></script>
     <script defer src="./node_modules/mousetrap/mousetrap.js"></script>
+    <script defer src="./node_modules/smooth-scroll/dist/smooth-scroll.polyfills.js"></script>
     <script src="Awesome.js"></script>
     <!-- endbuild -->
 </body>
