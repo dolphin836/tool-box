@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="has-navbar-fixed-top">
+<html>
 
 <head>
     <meta charset="utf-8">
@@ -14,34 +14,23 @@
 </head>
 
 <body>
-    <nav class="navbar is-primary is-fixed-top" role="navigation" aria-label="main navigation">
+    <!-- 语言切换 -->
+    <section class="section" style="padding-bottom: 0;padding-top: 1rem;">
         <div class="container">
-                <div class="navbar-brand">
-                    <a role="button" class="navbar-burger" id="navbar-burger" aria-label="menu" aria-expanded="false">
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                    </a>
-                </div>
-            <div class="navbar-menu" id="navbar-menu">
-                <div class="navbar-start" id="menu"></div>
-    
-                <div class="navbar-end">
-                    <div class="navbar-item">
-                        <!-- 语言切换 -->
-                        <div class="tags has-addons is-pulled-right">
-                            <span class="tag is-black">
-                                <a href="index.html" class="has-text-white">中文</a>
-                            </span>
-                            <span class="tag is-link">
-                                <a href="en.html" class="has-text-white">English</a>
-                            </span>
-                        </div>
+            <div class="columns">
+                <div class="column">
+                    <div class="tags has-addons is-pulled-right">
+                        <span class="tag is-primary">
+                            <a href="index.html" class="has-text-white">中文</a>
+                        </span>
+                        <span class="tag is-link">
+                            <a href="en.html" class="has-text-white">English</a>
+                        </span>
                     </div>
                 </div>
             </div>
         </div>
-    </nav>
+    </section>
 
     <section class="section">
         <div class="container">
@@ -63,6 +52,10 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <!-- 导航栏 -->
+            <div class="tabs is-centered" style="margin: 1rem 0 3rem 0;">
+                <ul id="menu"></ul>
             </div>
         </div>
         <!-- 网站列表 -->
