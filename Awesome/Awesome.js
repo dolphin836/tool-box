@@ -3,8 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
         main         = document.getElementById("main"),
         search       = document.getElementById("search"),
         searchInput  = document.getElementById("search-input"),
-        navbarBurger = document.getElementById("navbar-burger"),
-        navbarMenu   = document.getElementById("navbar-menu"),
         topButton    = document.getElementById("top-button");
         
     // 全局变量，所有的网站数据，用于搜索
@@ -20,16 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
         offset: 80
     });
 
-    // 滚动回调事件
-    document.addEventListener('scrollStart', function () {
-        let isActive = navbarBurger.classList.contains("is-active");
-
-        if (isActive) {
-            navbarBurger.classList.remove('is-active');
-            navbarMenu.classList.remove('is-active');
-        }
-    }, false);
-
     // 页面滚动事件：控制返回顶部按钮的显示和隐藏
     window.addEventListener('scroll', function(e) {
         let Y = window.scrollY;
@@ -43,12 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
             topButton.classList.add("is-hidden");
             isHiddenTopButton = true;
         }
-    });
-
-    // 导航栏
-    navbarBurger.addEventListener("click", function () {
-        navbarBurger.classList.toggle('is-active');
-        navbarMenu.classList.toggle('is-active');
     });
 
     // 搜索事件
@@ -194,16 +176,21 @@ document.addEventListener('DOMContentLoaded', () => {
         return hash[0];
     }
 
-    // 添加快捷导航 <a class="navbar-item">
+    // 添加快捷导航
     function addMenu(name, mark) {
+        let li = createNode('li');
+
+        if (mark == 'recommend') {
+            li.className = 'is-active';
+        }
+
         let a  = createNode('a');
 
-        a.className = 'navbar-item';
         a.innerHTML = name;
         a.href      = '#' + mark;
-        
-        // append(li, a);
-        append(menu, a);
+
+        append(li, a);
+        append(menu, li);
     }
 
     // 添加分组

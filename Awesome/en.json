@@ -211,6 +211,12 @@
                 "name": "DBeaver Community",
                 "href": "https://dbeaver.io",
                 "word": "Free Universal Database Tool"
+            },
+            {
+                "name": "Snapcraft",
+                "href": "https://snapcraft.io",
+                "word": "The app store for Linux",
+                "icon": "fab fa-linux"
             }
         ]
     },
@@ -326,6 +332,48 @@
                 "name": "Medium",
                 "word": "A place to read and write big ideas and important stories",
                 "href": "https://medium.com"
+            }
+        ]
+    },
+    {
+        "name": "Linux",
+        "mark": "linux",
+        "data": [
+            {
+                "name": "Manjaro",
+                "href": "https://manjaro.org"
+            },
+            {
+                "name": "Ubuntu",
+                "href": "https://www.ubuntu.com"
+            },
+            {
+                "name": "Linux Mint",
+                "href": "https://linuxmint.com"
+            },
+            {
+                "name": "CentOS",
+                "href": "https://www.centos.org"
+            },
+            {
+                "name": "RedHat",
+                "href": "https://www.redhat.com/en"
+            },
+            {
+                "name": "Fedora",
+                "href": "https://getfedora.org"
+            },
+            {
+                "name": "Deepin",
+                "href": "https://www.deepin.org"
+            },
+            {
+                "name": "Debian",
+                "href": "https://www.debian.org"
+            },
+            {
+                "name": "elementary OS",
+                "href": "https://elementary.io"
             }
         ]
     },

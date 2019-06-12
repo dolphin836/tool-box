@@ -17,6 +17,11 @@
 
 .top {
     position: fixed;
-    right: 4rem;
+    right: 2rem;
     bottom: 4rem;
+}
+
+.tabs ul,
+.tabs a {
+    border-bottom-color: #F5F5F5;
 }
