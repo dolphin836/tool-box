@@ -27,7 +27,7 @@ gulp.task('json', function() {
 
 // Css 文件
 gulp.task('awesome-css', function() {
-    gulp.src(['./node_modules/bulma/css/bulma.css', './node_modules/@fortawesome/fontawesome-free/css/all.css', './Awesome.css'])
+    gulp.src(['./node_modules/bulma/css/bulma.css', './node_modules/@fortawesome/fontawesome-free/css/all.css', './node_modules/loaders.css/loaders.css', './Awesome.css'])
         .pipe(concat('awesome.css'))
         .pipe(miniCss())
         .pipe(rev())

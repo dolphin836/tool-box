@@ -103,8 +103,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 初始化
     function init() {
-        main.innerHTML = '';
-        menu.innerHTML = '';
         // 从本地读取数据
         let data  = store.get('data');
         // 得到 Json 文件的 Hash 值
@@ -151,6 +149,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 渲染数据
     function draw(data) {
+        // 清除 Loading 动画
+        main.innerHTML = '';
+
         data.map(function (group) {
             addMenu(group.name, group.mark);
             addGroup(group);
