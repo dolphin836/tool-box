@@ -7,58 +7,123 @@
         <link href="favicon.ico" rel="icon" type="image/x-icon">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
         <style>
+            body {
+                display: flex;
+                min-height: 100vh;
+                flex-direction: column;
+            }
+
+            .app {
+                flex: 1;
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+            }
         </style>
     </head>
 
     <body>
-        <div class="container" style="height: 100vh;padding-top:10rem;">
-            <div class="columns is-mobile is-multiline" style="margin: 0 auto;">
-                <div class="column is-half-mobile">
-                    <div class="box">
-                        <p class="title is-4">
-                            <a href="/TimestampTransform/index.html" class="has-text-black">时间戳转换</a>
-                        </p>
-                        <p class="subtitle is-6 has-text-grey">
-                            Unix 时间戳与时间字符串格式互转
-                        </p>
-                        <p class="is-size-7 has-text-grey-light">最后更新　2019-07-18</p>
+        <div class="app">
+            <div class="container">
+                <div class="columns is-multiline" style="margin: 0 auto;">
+                    <div class="column is-one-quarter">
+                        <div class="box">
+                            <p class="title is-4">
+                                <a href="/TimestampTransform/index.html" class="has-text-black">时间戳转换</a>
+                            </p>
+                            <p class="subtitle is-6 has-text-grey">
+                                Unix 时间戳与时间字符串格式互转
+                            </p>
+                            <p class="is-size-7 has-text-grey-light">最后更新　2019-07-18</p>
+                        </div>
                     </div>
-                </div>
-                <div class="column is-half-mobile">
-                    <div class="box">
-                        <p class="title is-4">
-                            <a href="/GeneratorRandonPassword/index.html" class="has-text-black">生成随机密码</a>
-                        </p>
-                        <p class="subtitle is-6 has-text-grey">
-                            生成更安全的随机密码
-                        </p>
-                        <p class="is-size-7 has-text-grey-light">最后更新　2019-07-18</p>
+                    <div class="column is-one-quarter">
+                        <div class="box">
+                            <p class="title is-4">
+                                <a href="/GeneratorRandonPassword/index.html" class="has-text-black" target="_blank">生成随机密码</a>
+                            </p>
+                            <p class="subtitle is-6 has-text-grey">
+                                生成更安全的随机密码
+                            </p>
+                            <p class="is-size-7 has-text-grey-light">最后更新　2019-07-18</p>
+                        </div>
                     </div>
-                </div>
-                <div class="column is-half-mobile">
-                    <div class="box">
-                        <p class="title is-4">
-                            <a href="/SQL/index.html" class="has-text-black">SQL 语句转换</a>
-                        </p>
-                        <p class="subtitle is-6 has-text-grey">
-                            SQL 语句转换
-                        </p>
-                        <p class="is-size-7 has-text-grey-light">最后更新　2019-07-18</p>
+                    <div class="column is-one-quarter">
+                        <div class="box">
+                            <p class="title is-4">
+                                <a href="/SQL/index.html" class="has-text-black" target="_blank">SQL 语句转换</a>
+                            </p>
+                            <p class="subtitle is-6 has-text-grey">
+                                SQL 语句转换
+                            </p>
+                            <p class="is-size-7 has-text-grey-light">最后更新　2019-07-18</p>
+                        </div>
                     </div>
-                </div>
-                <div class="column is-half-mobile">
-                    <div class="box">
-                        <p class="title is-4">
-                            <a href="/Json/index.html" class="has-text-black">JSON 格式化</a>
-                        </p>
-                        <p class="subtitle is-6 has-text-grey">
-                            JSON　文件的美化与压缩
-                        </p>
-                        <p class="is-size-7 has-text-grey-light">最后更新　2019-07-18</p>
+                    <div class="column is-one-quarter">
+                        <div class="box">
+                            <p class="title is-4">
+                                <a href="/Json/index.html" class="has-text-black" target="_blank">JSON 格式化</a>
+                            </p>
+                            <p class="subtitle is-6 has-text-grey">
+                                JSON　文件的美化与压缩
+                            </p>
+                            <p class="is-size-7 has-text-grey-light">最后更新　2019-07-18</p>
+                        </div>
+                    </div>
+                    <div class="column is-one-quarter">
+                        <div class="box">
+                            <p class="title is-4">
+                                <a href="https://www.36awesome.com" class="has-text-black" target="_blank">36Awesome</a>
+                            </p>
+                            <p class="subtitle is-6 has-text-grey">
+                                简洁而强大的导航网站
+                            </p>
+                            <p class="is-size-7 has-text-grey-light">最后更新　2019-07-18</p>
+                        </div>
+                    </div>
+                    <div class="column is-one-quarter">
+                        <div class="box">
+                            <p class="title is-4">
+                                <a href="https://36photo.cn" class="has-text-black" target="_blank">36Photo</a>
+                            </p>
+                            <p class="subtitle is-6 has-text-grey">
+                                高品质图片网站
+                            </p>
+                            <p class="is-size-7 has-text-grey-light">最后更新　2019-07-18</p>
+                        </div>
+                    </div>
+                    <div class="column is-one-quarter">
+                        <div class="box">
+                            <p class="title is-4 has-text-black">
+                                36Password
+                            </p>
+                            <p class="subtitle is-6 has-text-grey">
+                                密码管理系统
+                            </p>
+                            <p class="is-size-7 has-text-grey-light">敬请期待</p>
+                        </div>
+                    </div>
+                    <div class="column is-one-quarter">
+                        <div class="box">
+                            <p class="title is-4 has-text-black">
+                                36Collage
+                            </p>
+                            <p class="subtitle is-6 has-text-grey">
+                                教学系统
+                            </p>
+                            <p class="is-size-7 has-text-grey-light">敬请期待</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <footer class="footer">
+            <div class="content has-text-centered">
+                <p style="margin-bottom: .4rem;">&copy; 2019 <a href="https://www.haibing.site">36ToolBox</a> BY <a href="https://github.com/dolphin836/Blog" target="_blank">dolphin</a></p>
+                <p class="is-size-7">
+                    <a href="http://www.miitbeian.gov.cn" class="has-text-grey" target="_blank">苏 ICP 备 15001763 号 - 4</a>
+                </p>
+            </div>
+        </footer>
     </body>
 
 </html>
