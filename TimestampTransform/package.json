@@ -33,7 +33,7 @@
     "lodash": ">=4.17.13",
     "lodash.mergewith": ">=4.6.2",
     "fstream": ">=1.0.12",
-    "tar": ">=2.2.2"
+    "tar": ">=4.4.15"
   },
   "dependencies": {
     "@mdi/js": "^3.5.95",
